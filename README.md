@@ -1,6 +1,8 @@
 # nodeJS_MySQL
 combines nodeJS and MySQL
 
+completed challenge 1 and 1/2 of challenge 2
+
 
 [screen shot 1](screenshot1.png)
 Format: ![Alt Text](screenshot1.png)
