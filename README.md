@@ -22,3 +22,5 @@ Format: ![Alt Text](screenshot5.png)
 [screen shot 6](screenshot6.png)
 Format: ![Alt Text](screenshot6.png)
 
+[screen shot 7](screenshot7.png)
+Format: ![Alt Text](screenshot7.png)
