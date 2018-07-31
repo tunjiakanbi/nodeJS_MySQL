@@ -5,4 +5,4 @@ combines nodeJS and MySQL
 Format: ![Alt Text](url)
 
 [screen shot 1](screenshot1.png)
-Format: ![Alt Text](url)
+Format: ![Alt Text](screenshot1.png)
