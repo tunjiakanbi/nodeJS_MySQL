@@ -89,26 +89,78 @@ function viewInv() {
 
 }
 
-function addInv() {//to be completed
-    var query = connection.query(
-        "SELECT * FROM products;",
-        function (err, res) {
-            if (err) throw err;
-            // Log all results of the SELECT statement
-            console.table(res);
-            connection.end();
+function addInv(res) {//to be competed
+    viewProd(); 
+    inquirer.prompt([
+        {
+            name: "whichProduct",
+            type: "input",
+            message: "Which product would you like to update?"
+        },
+        {
+            name: "addStock",
+            type: "input",
+            message: "What is the quantity you would like to add?"
+        }
+
+
+    ]).then(function(answer){
+        for(var i=0; i<res.length; i++){
+            if(+answers.whichProduct === res[i].item_id){
+
+            }
+        }
+        var query = connection.query(
+            "INSERT INTO PRODUCTS ? WHERE item_id = ?", {
+                stock_quantity: answer.addStock 
+            },
+            function (err) {
+                if (err) throw err;
+                console.table(answer);
+                console.log(query.sql);
+                connection.end();
+            }
+        );
+    });
+};
+
+    function addProd() { 
+        inquirer.prompt([
+            {
+                name: "product",
+                type: "input",
+                message: "What is the product you would like to add?"
+            },
+            {
+                name: "deptName",
+                type: "input",
+                message: "What is the department name you would like to add?"
+            },
+            {
+                name: "price",
+                type: "input",
+                message: "What is the price you would like to add?"
+            },
+            {
+                name: "stock",
+                type: "input",
+                message: "What is the stock quantity you would like to add?"
+            }
+        ]).then(function (answer) {
+            var query = connection.query(
+
+                "INSERT INTO products SET ?", {
+                    product_name: answer.product,
+                    department_name: answer.deptName,
+                    price: answer.price,
+                    stock_quantity: answer.stock
+                },
+                function (err) {
+                    if (err) throw err;
+                    console.table(answer);
+                    console.log(query.sql);
+                    connection.end();
+                }
+            );
         });
-
-}
-
-function addProd() {//to be completed
-    var query = connection.query(
-        "SELECT * FROM products;",
-        function (err, res) {
-            if (err) throw err;
-            // Log all results of the SELECT statement
-            console.table(res);
-            connection.end();
-        });
-
-}
+    };
